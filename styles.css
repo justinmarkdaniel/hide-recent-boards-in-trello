@@ -1,0 +1,7 @@
+[data-hidden="true"] {
+  display: none !important;
+}
+
+[data-ready="true"] main {
+  visibility: visible !important;
+}

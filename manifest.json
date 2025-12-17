@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Trello Hide Recent Boards",
+  "version": "1.0.0",
+  "description": "Hides the Recently Viewed boards section on Trello",
+  "content_scripts": [
+    {
+      "matches": ["*://*.trello.com/*"],
+      "css": ["styles.css"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
