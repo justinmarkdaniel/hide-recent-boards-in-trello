@@ -25,3 +25,4 @@ The extension finds the "Recently Viewed" heading and hides its parent container
 ## License
 
 Personal, non-commercial use only. See [LICENSE](LICENSE).
+
