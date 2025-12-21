@@ -1,4 +1,4 @@
-# Trello Hide Recent Boards
+# Hide Recent Boards in Trello
 
 Chrome extension that hides the "Recently Viewed" boards section on Trello.
 
