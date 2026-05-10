@@ -1,0 +1,13 @@
+{
+  "name": "hide-recent-boards-in-trello",
+  "version": "1.0.1",
+  "description": "Chrome extension that hides the Recently Viewed boards section on Trello",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}

@@ -7,7 +7,7 @@
     {
       "matches": ["*://*.trello.com/*"],
       "css": ["styles.css"],
-      "js": ["content.js"],
+      "js": ["dist/content.js"],
       "run_at": "document_start"
     }
   ]

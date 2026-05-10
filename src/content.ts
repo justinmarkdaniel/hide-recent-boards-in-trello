@@ -1,11 +1,11 @@
-(function() {
+(function () {
   'use strict';
 
-  function hideRecentSection() {
-    const headings = document.querySelectorAll('h3');
+  function hideRecentSection(): boolean {
+    const headings = document.querySelectorAll<HTMLHeadingElement>('h3');
 
     for (const h3 of headings) {
-      if (h3.textContent.trim().toLowerCase() === 'recently viewed') {
+      if (h3.textContent?.trim().toLowerCase() === 'recently viewed') {
         const container = h3.parentElement?.parentElement;
         if (container && !container.hasAttribute('data-hidden')) {
           container.setAttribute('data-hidden', 'true');
@@ -16,16 +16,16 @@
     return false;
   }
 
-  function revealPage() {
+  function revealPage(): void {
     document.documentElement.setAttribute('data-ready', 'true');
   }
 
-  function runCleanup() {
+  function runCleanup(): void {
     let attempts = 0;
-    const interval = setInterval(function() {
+    const interval = window.setInterval(() => {
       attempts++;
       if (hideRecentSection() || attempts >= 50) {
-        clearInterval(interval);
+        window.clearInterval(interval);
         revealPage();
       }
     }, 50);
@@ -37,9 +37,9 @@
     document.addEventListener('DOMContentLoaded', runCleanup);
   }
 
-  // Handle SPA navigation
+  // SPA navigation: Trello swaps content client-side, so re-run on URL change.
   let lastUrl = location.href;
-  setInterval(function() {
+  window.setInterval(() => {
     if (location.href !== lastUrl) {
       lastUrl = location.href;
       document.documentElement.removeAttribute('data-ready');
